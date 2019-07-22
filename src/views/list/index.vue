@@ -1,12 +1,13 @@
 <template>
     <div>
-        <img class="logo" src="../../assets/imgs/logo.png"/>
+        <common-header></common-header>
         <search-input></search-input>
         <house-list></house-list>
     </div>
 </template>
 
 <script>
+    import CommonHeader from '../../components/Header'
     import SearchInput from './components/SearchInput'
     import HouseList from './components/HouseList'
 
@@ -18,6 +19,7 @@
             }
         },
         components: {
+            CommonHeader,
             SearchInput,
             HouseList
         }
@@ -26,9 +28,4 @@
 
 <style>
     @import '../../assets/css/base.less';
-
-    .logo{
-        width: 50px;
-        height: 50px;
-    }
 </style>

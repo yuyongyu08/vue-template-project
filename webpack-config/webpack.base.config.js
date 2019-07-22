@@ -1,4 +1,5 @@
 const path = require('path');
+const entry = require('./entry');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -7,12 +8,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const devMode = process.env.NODE_ENV === 'development';
 
 module.exports = {
-    entry: {
-        list: path.resolve(__dirname, '../src/views/list/index.js')
-    },
+    entry: entry,
     output: {
         path: path.resolve(__dirname, '../build'),
-        filename: devMode ? '[name].[hash:6].js' : '[name].js',
+        filename: devMode ? '[name]/index.[hash:6].js' : '[name]/index.js',
     },
     resolve: {
         extensions: ['.js', '.vue', '.json', '.css'],
@@ -77,8 +76,7 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: devMode ? '[name].[hash:6].css' : '[name].css',
-            chunkFilename: devMode ? '[id].[hash:6].css' : '[id].css',
+            filename: devMode ? '[name]/index.[hash:6].css' : '[name]/index.css'
         }),
     ]
 };
