@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let webpackDevConfig = {
     mode: 'development',
-    devtool: 'eval',
+    devtool: 'inline-source-map',
     devServer: {
         open: true,
         contentBase: path.resolve(__dirname, '../build'),
@@ -19,10 +19,11 @@ let webpackDevConfig = {
 };
 
 Object.keys(entry).forEach((key) => {
+    console.log('key:', key);
     webpackDevConfig.plugins.push(
         new HtmlWebpackPlugin({
-            filename: `index.html`,
-            // chunks: [`${key}/index`], //控制每个页面只引入与自己相关的资源（css、js）
+            filename: `${key}/index.html`,
+            chunks: [`${key}`], //控制每个页面只引入与自己相关的资源（css、js）
             template: `src/views/${key}/index.html`
         })
     )
