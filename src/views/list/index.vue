@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="list">
         <common-header></common-header>
         <search-input></search-input>
         <house-list></house-list>
@@ -26,6 +26,10 @@
     }
 </script>
 
-<style>
+<style lang="less">
     @import '../../assets/css/base.less';
+
+    .list{
+        padding: 10px;
+    }
 </style>

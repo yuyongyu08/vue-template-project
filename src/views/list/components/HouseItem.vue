@@ -1,8 +1,8 @@
 <template>
     <div class="house-item">
-        <img class="pic" :src="detailInfo.picUrl"/>
+        <img class="pic" :src="detailInfo.picUrl | imageHandler(100, 100, 1)"/>
         <div class="infos">
-            <a>{{detailInfo.title}}</a>
+            <a>{{detailInfo.title | subText(8)}}</a>
         </div>
     </div>
 </template>

@@ -19,7 +19,6 @@ let webpackDevConfig = {
 };
 
 Object.keys(entry).forEach((key) => {
-    console.log('key:', key);
     webpackDevConfig.plugins.push(
         new HtmlWebpackPlugin({
             filename: `${key}/index.html`,
