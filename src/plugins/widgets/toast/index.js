@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import Main from './main.vue';
+import index from './index.vue';
 
 let instance;
 
 function createInstance () {
   if (!instance) {
-    instance = new (Vue.extend(Main))({
+    instance = new (Vue.extend(index))({
       el: document.createElement('div')
     });
     document.body.appendChild(instance.$el);
