@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import plugins from '../../plugins'
 import utils from '../../utils'
-import IndexView from './index.vue'
+// import IndexView from './index.vue'
+import IndexView from './indexDecorator.vue'
 
 Vue.config.productionTip = false;
 
