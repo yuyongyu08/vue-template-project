@@ -4,7 +4,7 @@ import widgets from './widgets';
 
 
 export default {
-    install:  Vue => {
+    install:  (Vue: any) => {
         Vue.use(directives);
 
         Vue.use(filters);

@@ -5,6 +5,6 @@
 * @param length：保留的长度
 * @param appendix：截取后拼接后缀
 **/
-export default function (text, length, appendix = '...') {
+export default function (text: string, length: number, appendix: string = '...') {
     return length >= text.length ? text : String.prototype.substr.call(text, 0, length) + appendix
 }

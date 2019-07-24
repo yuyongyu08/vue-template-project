@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import index from './index.vue';
 
-let instance;
+let instance: Vue;
 
 function createInstance () {
   if (!instance) {

@@ -6,7 +6,7 @@
 * @param height：长度
 * @param crop：裁剪
 **/
-export default function (url, width = 140, height = 105, crop = 1) {
+export default function (url: string, width: number = 140, height: number = 105, crop: any = 1): string{
     let _url = url;
     if (_url) {
         let _query = (_url.match(/(\?.*$)/) || [''])[0];

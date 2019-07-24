@@ -14,7 +14,7 @@ module.exports = {
         filename: devMode ? '[name]/index.[hash:6].js' : '[name]/index.js',
     },
     resolve: {
-        extensions: ['.js', '.vue', '.json', '.css'],
+        extensions: ['.ts', '.js', '.vue', '.json', '.css'],
     },
     module: {
         rules: [
@@ -22,10 +22,18 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
+            // {
+            //     test: /\.js$/,
+            //     exclude: path.resolve(__dirname, '../node_modules'),
+            //     loader: 'babel-loader',
+            // },
             {
-                test: /\.js$/,
-                exclude: path.resolve(__dirname, '../node_modules'),
-                loader: 'babel-loader',
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
             },
             {
                 test: /\.(less|css)$/,

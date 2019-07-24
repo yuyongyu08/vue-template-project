@@ -1,7 +1,7 @@
 import requestHelper from './request-helper'
 
 export default {
-    install: Vue => {
+    install: (Vue: any) => {
         Vue.prototype.$util = {
             requestHelper
         }

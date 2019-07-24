@@ -1,8 +1,8 @@
 import axios from 'axios'
-import jsonp from 'jsonp'
+let jsonp = require('jsonp');
 
 export default class RequestHelper {
-    static get(url = '', config = {}){
+    static get(url: string, config?: Object){
         return axios.get(url, config)
             .then(res => res.data)
             .catch(err => {
@@ -11,7 +11,7 @@ export default class RequestHelper {
             })
     }
 
-    static post(url = '', data = {}, config = {}){
+    static post(url: string, data?: Object, config?: Object){
         return axios.post(url, data, config)
             .then(res => res.data)
             .catch(err => {
@@ -20,7 +20,7 @@ export default class RequestHelper {
             })
     }
 
-    static jsonp(url, config = {}){
+    static jsonp(url: string, config?: Object){
         return new Promise((resolve, reject) => {
 
             let _config = Object.assign({
@@ -29,7 +29,7 @@ export default class RequestHelper {
                 timeout: 3000
             }, config);
 
-            jsonp(url, _config, (err, data) => {
+            jsonp(url, _config, (err: any, data: Object) => {
                 if (err) {
                     reject(err)
                 } else {
@@ -39,7 +39,7 @@ export default class RequestHelper {
         })
     }
 
-    static handleError(error){
+    static handleError(error: any){
         if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
