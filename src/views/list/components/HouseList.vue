@@ -6,48 +6,34 @@
 
 <script>
     import HouseItem from './HouseItem'
+    import listApi from '../../../services/list'
 
     export default {
         name: "house-list",
+        props: {
+            list: {
+                type: Array
+            }
+        },
+        watch: {
+            list(val){
+                this.houseList = val
+            }
+        },
         data(){
             return {
-                houseList: [
-                    {
-                        infoId: '1qaz',
-                        title: '整租 东沙各庄村委会 1室0厅1卫',
-                        picUrl: 'https://pic4.58cdn.com.cn/mobile/big/n_v1bkuymc6ygbnvthtjc5uq.jpg',
-                        desc: "公寓·9㎡·朝南",
-                        price: '5000'
-                    },
-                    {
-                        infoId: '2wsx',
-                        title: '整租 东沙各庄村委会 1室0厅1卫',
-                        picUrl: 'https://pic4.58cdn.com.cn/mobile/big/n_v1bkuymc6ygbnvthtjc5uq.jpg',
-                        desc: "公寓·9㎡·朝南",
-                        price: '5000'
-                    },
-                    {
-                        infoId: '3edc',
-                        title: '整租 东沙各庄村委会 1室0厅1卫',
-                        picUrl: 'https://pic4.58cdn.com.cn/mobile/big/n_v1bkuymc6ygbnvthtjc5uq.jpg',
-                        desc: "公寓·9㎡·朝南",
-                        price: '5000'
-                    },
-                    {
-                        infoId: '4rfv',
-                        title: '整租 东沙各庄村委会 1室0厅1卫',
-                        picUrl: 'https://pic4.58cdn.com.cn/mobile/big/n_v1bkuymc6ygbnvthtjc5uq.jpg',
-                        desc: "公寓·9㎡·朝南",
-                        price: '5000'
-                    },
-                    {
-                        infoId: '5tgb',
-                        title: '整租 东沙各庄村委会 1室0厅1卫',
-                        picUrl: 'https://pic4.58cdn.com.cn/mobile/big/n_v1bkuymc6ygbnvthtjc5uq.jpg',
-                        desc: "公寓·9㎡·朝南",
-                        price: '5000'
+                houseList: this.list
+            }
+        },
+        methods:{
+            handleScroll(){
+                listApi.getList().then(result => {
+                    if(result && result.code == 0){
+                        this.houseList = this.houseList.concat(result.data.houseList);
                     }
-                ]
+                }).catch(err => {
+                    console.log(err);
+                });
             }
         },
         components: {

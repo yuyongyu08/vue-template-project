@@ -1,8 +1,8 @@
 <template>
     <div class="list">
         <common-header></common-header>
-        <search-input></search-input>
-        <house-list></house-list>
+        <search-input @handle-Search="handleSearch"></search-input>
+        <house-list :list="houseList"></house-list>
     </div>
 </template>
 
@@ -15,7 +15,18 @@
         name: "index",
         data() {
             return {
-
+                houseList: []
+            }
+        },
+        methods:{
+            handleSearch(keyword){
+                this.$util.requestHelper.get('https://easy-mock.com/mock/5d37c826c45d0c70bb9dd9f2/example/house/list').then(result => {
+                    if(result && result.code == 0){
+                        this.houseList = result.data.houseList;
+                    }
+                }).catch(err => {
+                    console.log(err);
+                });
             }
         },
         components: {

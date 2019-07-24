@@ -18,12 +18,16 @@
                 if(this.keyword.trim().length){
                     console.log(this.keyword.length); //v-model不会自动清除空格
 
+                    this.$emit('handle-Search', this.keyword)
                 }else{
-                    this.$toast({
-                        title: 'toast title',
-                        content: `关键词长度为：${this.keyword.length}`,
-                        repeatShow: true
-                    });
+                    //方式1
+                    this.$toast(`关键词不能为空：${this.keyword}`);
+
+                    //方式2
+                    // this.$toast({
+                    //     title: 'toast title',
+                    //     content: `关键词长度为：${this.keyword.length}`
+                    // });
                 }
             }
         }

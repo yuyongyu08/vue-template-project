@@ -3,6 +3,9 @@
         <img class="pic" :src="detailInfo.picUrl | imageHandler(100, 100, 1)"/>
         <div class="infos">
             <a>{{detailInfo.title | subText(8)}}</a>
+            <div>
+                {{detailInfo.desc}} <span class="price">{{detailInfo.price}}元</span>
+            </div>
         </div>
     </div>
 </template>
@@ -33,6 +36,11 @@
 
         .infos{
             margin-left: 110px;
+
+            .price{
+                color: red;
+                font-size: 18px;
+            }
         }
     }
 </style>
