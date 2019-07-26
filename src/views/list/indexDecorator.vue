@@ -8,8 +8,7 @@
 
 
 <script lang="ts">
-    import Vue from 'vue'
-    import Component from 'vue-class-component'
+    import { Vue, Component } from "vue-property-decorator";
     import CommonHeader from '../../components/Header.vue'
     import SearchInput from './components/SearchInput.vue'
     import HouseList from './components/HouseList.vue'
