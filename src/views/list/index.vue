@@ -18,6 +18,9 @@
                 houseList: []
             }
         },
+        created(){
+            this.handleSearch();
+        },
         methods:{
             handleSearch(keyword){
                 this.$util.requestHelper.get('https://easy-mock.com/mock/5d37c826c45d0c70bb9dd9f2/example/house/list').then(result => {
@@ -39,8 +42,4 @@
 
 <style lang="less">
     @import '../../assets/css/base.less';
-
-    .list{
-        padding: 10px;
-    }
 </style>

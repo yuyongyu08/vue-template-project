@@ -40,8 +40,4 @@
 
 <style lang="less">
     @import '../../assets/css/base.less';
-
-    .list{
-        padding: 10px;
-    }
 </style>

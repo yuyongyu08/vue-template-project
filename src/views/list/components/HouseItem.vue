@@ -2,9 +2,11 @@
     <div class="house-item">
         <img class="pic" :src="detailInfo.picUrl | imageHandler(100, 100, 1)"/>
         <div class="infos">
-            <a>{{detailInfo.title | subText(8)}}</a>
+            <a class="title">{{detailInfo.title | subText(8)}}</a>
+
             <div>
-                {{detailInfo.desc}} <span class="price">{{detailInfo.price}}元</span>
+                <span class="desc">{{detailInfo.desc}}</span>
+                <span class="price">{{detailInfo.price}}元</span>
             </div>
         </div>
     </div>
@@ -24,18 +26,26 @@
 
 <style lang="less">
     .house-item{
-        border-bottom: 1px solid #e0e0e0;
+        border-top: 2px solid #e0e0e0;
         min-height: 100px;
-        padding: 10px 0;
+        padding: 30px;
 
         .pic{
-            width: 100px;
-            height: 100px;
-            float: left;
+            width: 240px;
+            height: 180px;
         }
 
         .infos{
-            margin-left: 110px;
+            display: inline-block;
+
+            .title{
+                font-size: 30px;
+            }
+
+            .desc{
+                font-size:22px;
+                color:rgba(102,102,102,1);
+            }
 
             .price{
                 color: red;

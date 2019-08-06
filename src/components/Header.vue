@@ -12,7 +12,7 @@
 
 <style>
     .logo{
-        width: 30px;
-        height: 30px;
+        width: 80px;
+        height: 80px;
     }
 </style>
