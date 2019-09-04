@@ -12,7 +12,7 @@
 * /src/pages/**/components/：存放当前页面的组件
 
 2.组件规范
-* 每个组件都是一个文件，遵循class命名规范，**首字母大写**
+* 每个组件都是一个文件，遵循class命名规范，**`首字母大写`**
 
 3.组件内容规范
 * 参见Vue官方规范
@@ -20,12 +20,13 @@
 4.样式规范
 * 同一使用less语法
 * **组件的样式最外层一定要是嵌套的形式，避免组件被引用时样式覆盖**，如：
+
 ```
-.wrapper{
-    .content{
-        //具体样式
+    .wrapper{
+        .content{
+            //具体样式
+        }
     }
-}
 ```
 
 
@@ -47,13 +48,15 @@ npm i
 npm run build
 ```
 
-* 启动(一定要先运行npm run build)
+* 启动(`一定要先运行npm run build`)
 
 ```
 npm run dev
 ```
 
-* 访问：http://dev.m.anjuke.com:9000/webpack-dev-server ，进入对应的页面即可开发
+* 访问
+
+浏览器打开http://dev.m.58.com:9000/webpack-dev-server ，进入对应的页面即可看到效果
 
 
 ### 2.开发
@@ -82,4 +85,3 @@ frs rl
 * 第四步：上线，去[frs](http://frs.58corp.com/record)系统操作
 
 
-ada
