@@ -12,7 +12,6 @@ let webpackDevConfig = {
         contentBase: path.resolve(__dirname, '../build'),
         compress: true,
         hot: true,
-        host: 'dev.m.58.com',
         port: 9000
     },
     plugins: []

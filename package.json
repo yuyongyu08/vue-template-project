@@ -1,5 +1,5 @@
 {
-  "name": "zf-vue-template",
+  "name": "vue-template-project",
   "version": "1.0.0",
   "description": "a vue template project",
   "scripts": {
@@ -8,11 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@igit.58corp.com:fangfe/zf-vue-template.git"
+    "url": "https://github.com/yuyongyu08/vue-template-project.git"
   },
   "keywords": [
     "vue",
-    "template"
+    "template",
+    "ts",
+    "typescript"
   ],
   "author": "yuyongyu",
   "license": "ISC",
