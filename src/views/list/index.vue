@@ -42,4 +42,8 @@
 
 <style lang="less">
     @import '../../assets/css/base.less';
+
+    .list{
+        background: url("../../assets/imgs/bgk.jpeg") no-repeat;
+    }
 </style>

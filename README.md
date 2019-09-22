@@ -1,16 +1,24 @@
 # vue模版工程（TS版）
 
+支持MPA和SPA
+
 ## 一、规范
 
 1.目录规范
-* /src/pages下的目录按照业务模块划分
+```$xslt
+src
+├── assets //静态资源
+├── components //系统级组件
+├── plugins 
+│   ├── directives //指令
+│   ├── filters //过滤器
+│   └── widgets //挂件
+├── services //接口服务
+├── utils //常用工具
+├── views //页面
+│   ├── index.html //webpack-dev-server的引导页
 
-    * 前缀：zf-租房
-    * 后缀：list-列表页，detail-详情页
-
-* /src/assets/：存放公共资源（图片、样式）
-* /src/components/：存放公共组件
-* /src/pages/**/components/：存放当前页面的组件
+```
 
 2.组件规范
 * 每个组件都是一个文件，遵循class命名规范，**`首字母大写`**
@@ -32,8 +40,6 @@
 
 
 
-
-
 ## 二、开发
 
 ### 1.准备工作
@@ -42,6 +48,11 @@
 npm i
 ```
 
+* 启动
+
+```
+npm run dev
+```
 
 * 构建
 
@@ -49,11 +60,6 @@ npm i
 npm run build
 ```
 
-* 启动(`一定要先运行npm run build`)
-
-```
-npm run dev
-```
 
 ### 2.开发
 

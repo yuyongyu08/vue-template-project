@@ -11,6 +11,7 @@ module.exports = {
     entry: entry,
     output: {
         path: path.resolve(__dirname, '../build'),
+        publicPath: '../',
         filename: devMode ? '[name]/index.[hash:6].js' : '[name]/index.js',
     },
     resolve: {
@@ -22,11 +23,11 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
-            // {
-            //     test: /\.js$/,
-            //     exclude: path.resolve(__dirname, '../node_modules'),
-            //     loader: 'babel-loader',
-            // },
+            {
+                test: /\.js$/,
+                exclude: path.resolve(__dirname, '../node_modules'),
+                loader: 'babel-loader',
+            },
             {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
@@ -54,7 +55,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'imgs/[name].[hash:7].[ext]',
+                    name: 'images/[name].[hash:7].[ext]',
                 }
             },
             {

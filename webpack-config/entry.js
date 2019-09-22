@@ -6,12 +6,15 @@ if(process.env.cate){
     let key = `${process.env.cate}`;
     entries[key] =  `./src/views/${key}/index.ts`;
 }else{
-    let files = fs.readdirSync(path.resolve(__dirname, '../src/views'));
+    let dirPath = path.resolve(__dirname, '../src/views')
+    let files = fs.readdirSync(dirPath);
     files.forEach((file) => {
-        let key = `${file}`;
-        entries[key] =  `./src/views/${key}/index.ts`;
+        let fileStats = fs.statSync(`${dirPath}/${file}`);
+        if (fileStats.isDirectory()) {
+            let key = `${file}`;
+            entries[key] =  `./src/views/${key}/index.ts`;
+        }
     });
 }
-
 
 module.exports = entries;

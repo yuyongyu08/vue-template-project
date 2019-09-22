@@ -9,10 +9,18 @@ let webpackDevConfig = {
     devtool: 'inline-source-map',
     devServer: {
         open: true,
-        contentBase: path.resolve(__dirname, '../build'),
         compress: true,
         hot: true,
-        port: 9000
+        port: 9000,
+        publicPath: '/',publicPath,
+        historyApiFallback: {
+            rewrites: [
+                {
+                    from: /^\/$/,
+                    to: '/src/views/index.html'
+                }
+            ]
+        }
     },
     plugins: []
 };
